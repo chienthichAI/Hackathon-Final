@@ -64,21 +64,6 @@ const Login = () => {
     return null;
   };
 
-  const fillDemoCredentials = () => {
-    handleChange({
-      target: {
-        name: 'email',
-        value: 'admin@fptunihub.com'
-      }
-    });
-    handleChange({
-      target: {
-        name: 'password',
-        value: 'admin123'
-      }
-    });
-  };
-
   return (
     <ErrorBoundary>
       <div className="min-h-screen flex items-center justify-center bg-white py-12 px-4 sm:px-6 lg:px-8 relative">
@@ -93,31 +78,6 @@ const Login = () => {
             <p className="mt-3 text-center text-base text-gray-300 animate-fade-in-up stagger-1 font-medium">
               Sign in to your FPT University account
             </p>
-          </div>
-          
-          {/* Demo Credentials */}
-          <div className="bg-gray-800 border border-gray-600 rounded-2xl p-6 animate-fade-in-up stagger-2 shadow-lg">
-            <h3 className="text-base font-semibold text-white mb-3 flex items-center">
-              <span className="w-1 h-1 bg-white rounded-full mr-2 opacity-90"></span>
-              Demo Credentials
-            </h3>
-            <div className="text-sm text-gray-200 space-y-2 font-medium">
-              <div className="flex items-center justify-between bg-gray-700 rounded-lg p-2 border border-gray-600">
-                <span className="text-white font-semibold">Admin:</span>
-                <span className="text-gray-300 font-mono text-xs">admin@fptunihub.com / admin123</span>
-              </div>
-              <div className="flex items-center justify-between bg-gray-700 rounded-lg p-2 border border-gray-600">
-                <span className="text-white font-semibold">Student:</span>
-                <span className="text-gray-300 font-mono text-xs">quangchienaz3@gmail.com / password123</span>
-              </div>
-            </div>
-            <button
-              type="button"
-              onClick={fillDemoCredentials}
-              className="mt-4 w-full bg-gray-700 text-orange-500 px-4 py-1.5 rounded-xl hover:bg-gray-600 transition-all duration-300 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border border-orange-500"
-            >
-              Fill Demo Admin
-            </button>
           </div>
           
           <form className="mt-8 space-y-6" onSubmit={handleSubmit} noValidate>
