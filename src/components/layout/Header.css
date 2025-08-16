@@ -1,0 +1,211 @@
+/* Header Logo Animations */
+
+/* Logo Container Hover Effects */
+.logo-container {
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.logo-container:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.logo-container::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #f97316, #f59e0b, #ef4444, #f97316);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+}
+
+.logo-container:hover::before {
+  opacity: 1;
+}
+
+/* Logo Vector Hover Effects */
+.logo-container .w-10 {
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logo-container:hover .w-10 {
+  transform: scale(1.1);
+}
+
+/* Logo Circle Effects */
+.logo-container .w-10 > div:first-child {
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logo-container:hover .w-10 > div:first-child {
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Glowing Ring Animation */
+@keyframes glow-pulse {
+  0%, 100% { 
+    opacity: 0;
+    transform: scale(1);
+    filter: blur(8px);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.1);
+    filter: blur(12px);
+  }
+}
+
+.logo-container:hover .glow-ring {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Sparkle Animation */
+@keyframes sparkle-pulse {
+  0%, 100% { 
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.logo-container .w-3,
+.logo-container .w-2 {
+  animation: sparkle-pulse 2s ease-in-out infinite;
+}
+
+.logo-container .w-2 {
+  animation-delay: 1s;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% { 
+    transform: translateX(-100%) skewX(-12deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(200%) skewX(-12deg);
+    opacity: 0;
+  }
+}
+
+.shimmer-effect {
+  animation: shimmer 1.5s ease-in-out;
+}
+
+/* Logo Bounce on Page Load */
+@keyframes logo-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-8px) scale(1.02);
+  }
+  60% {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+.logo-container {
+  animation: logo-bounce 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Logo Float Effect */
+@keyframes logo-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.logo-container:hover {
+  animation: logo-float 3s ease-in-out infinite;
+}
+
+/* Responsive Logo Sizing */
+@media (max-width: 768px) {
+  .logo-container {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .logo-container img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Logo Shadow on Scroll */
+.header-scrolled .logo-container {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo Color Transition */
+.logo-container:hover {
+  background: linear-gradient(135deg, #1a1a1a, #000000);
+  border-color: #333333;
+}
+
+/* Corner Accent Animation */
+@keyframes corner-pulse {
+  0%, 100% { 
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.logo-container:hover .corner-accent {
+  animation: corner-pulse 2s ease-in-out infinite;
+}
+
+/* Enhanced Corner Accent */
+.corner-accent {
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logo-container:hover .corner-accent {
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+} 
+
+/* Professional Title Typography */
+.logo-container .text-xl {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.logo-container:hover .text-xl {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+}
+
+/* Subtitle Styling */
+.logo-container .text-xs {
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  opacity: 0.8;
+  transition: all 0.4s ease;
+}
+
+.logo-container:hover .text-xs {
+  opacity: 1;
+  transform: translateY(-1px);
+} 
